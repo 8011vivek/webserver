@@ -1,0 +1,13 @@
+FROM centos:7
+
+MAINTAINER "tg@gmail.com"
+
+ARG name="ekamjeet"
+
+ENV email="ekam@gmail.com"
+
+RUN yum update -y  && \
+   yum install httpd vim netstat net-tools  -y
+
+ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
+
